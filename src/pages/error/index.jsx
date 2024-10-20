@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import errorImg from '../../assets/img/error-img.png';
 
 function Error() {
   return (
