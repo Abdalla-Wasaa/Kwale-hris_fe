@@ -13,7 +13,7 @@ const navigate = useNavigate();
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('http://localhost:4000/addRetirement',{payrollId,retirementDate,reason})
+    axios.post('https://kwale-hris-app.onrender.com:4000/addRetirement',{payrollId,retirementDate,reason})
     .then(res=>{
         console.log(res);
         navigate('/retirementList');

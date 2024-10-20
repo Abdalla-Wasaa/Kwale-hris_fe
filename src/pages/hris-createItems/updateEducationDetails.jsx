@@ -15,7 +15,7 @@ function UpdateEducationDetails() {
 
     useEffect(() => {
         if (Id) {
-            axios.get(`http://localhost:4000/getEducationDetails/${Id}`)
+            axios.get(`https://kwale-hris-app.onrender.com:4000/getEducationDetails/${Id}`)
                 .then(res => {
                     if (res.data && res.data.length > 0) {
                         const data = res.data[0]; // Assuming response is an array
@@ -34,7 +34,7 @@ function UpdateEducationDetails() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        axios.put(`http://localhost:4000/updateEducationDetails/${Id}`, {
+        axios.put(`https://kwale-hris-app.onrender.com:4000/updateEducationDetails/${Id}`, {
             payrollId,
            institutionName,
            graduationYear,

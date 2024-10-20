@@ -47,7 +47,7 @@ function EmployeeDetails() {
     // GET 
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/employeeDetails/${id}`)
+        axios.get(`https://kwale-hris-app.onrender.com:4000/employeeDetails/${id}`)
             .then(res => {
                 if (res.data && Array.isArray(res.data) && res.data.length > 0) {
                     const data = res.data[0];
@@ -89,7 +89,7 @@ function EmployeeDetails() {
 const [relationshipDetails,setRelationshipDetails] = useState([]);
 useEffect(() => {
     if (payrollId) {
-        axios.get('http://localhost:4000/getRelationshipDetails/' + payrollId)
+        axios.get('https://kwale-hris-app.onrender.com:4000/getRelationshipDetails/' + payrollId)
             .then(res => {
                 console.log(res);
                 setRelationshipDetails(res?.data);
@@ -101,7 +101,7 @@ useEffect(() => {
 const [educationDetails,setEducationDetails] = useState([]);
 useEffect(() => {
     if (payrollId) {
-        axios.get('http://localhost:4000/getEductnDetails/' + payrollId)
+        axios.get('https://kwale-hris-app.onrender.com:4000/getEductnDetails/' + payrollId)
             .then(res => {
                 console.log(res);
                 setEducationDetails(res?.data);

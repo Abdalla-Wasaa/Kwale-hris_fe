@@ -24,7 +24,7 @@ function EditSelectionPage() {
     const [religion,setreligion] = useState('');
 
     useEffect(()=>{
-        axios.get('http://localhost:4000/getEmployee/'+id,{payrollId,fname,lname,email,surname,gender,address,salutation,kra,nationalId,religion})
+        axios.get('https://kwale-hris-app.onrender.com:4000/getEmployee/'+id,{payrollId,fname,lname,email,surname,gender,address,salutation,kra,nationalId,religion})
         .then(res => {
             console.log(res);
             setPayrollId(res?.data[0].payrollId)

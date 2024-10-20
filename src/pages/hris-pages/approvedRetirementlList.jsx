@@ -14,7 +14,7 @@ function ApprovedRetirementList() {
     
       useEffect(() => {
         // Fetch the retirement list from the API
-        axios.get('http://localhost:4000/approvedRetirementList')
+        axios.get('https://kwale-hris-app.onrender.com:4000/approvedRetirementList')
             .then(response => {
                 setRetirementList(response.data);
             })
@@ -24,7 +24,7 @@ function ApprovedRetirementList() {
     }, []);
 
     const handleDisapprove=(id)=> {
-        axios.put('http://localhost:4000/disapproveTermination/'+id)
+        axios.put('https://kwale-hris-app.onrender.com:4000/disapproveTermination/'+id)
         .then(res=>{
             console.log(res.data);
             alert('You are About To Disapprove This Termination');

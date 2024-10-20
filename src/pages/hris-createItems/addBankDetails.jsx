@@ -16,7 +16,7 @@ const navigate = useNavigate();
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('http://localhost:4000/addBankdetails',{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
+    axios.post('https://kwale-hris-app.onrender.com:4000/addBankdetails',{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
     .then(res=>{
         console.log(res);
         navigate('/employees');

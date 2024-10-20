@@ -9,136 +9,13 @@ function SignUpForm() {
   const [mobile,setMobile] = useState('');
   const [username,setUsername] = useState('');
   const [employeeId,setEmployeeId] = useState('');
-  // const [designation,setDesignation] = useState('');
   const [userType,setUserType] = useState('');
   const [password,setPassword] = useState('');
   const navigate = useNavigate();
 
-//   const [wards,setWards] = useState([]);
-//   const [zones,setZones] = useState([]);
-//   const [subCounty,setSubCounty] = useState('');
-//   const [ward,setWard] = useState('');
-//   const [zone,setZone] = useState('');
-// const subCounties =[
-// {
-// name:"Matuga",
-//       wards:[
-//       {
-//       name:"Tiwi",
-//       zones:["Mkoyo","Simkumbe"]
-//       },
-//       {
-//       name:"Waa/Ng'ombeni",
-//       zones:["Pungu","Waa","Ng'ombeni","Matuga"]
-//       },
-//       {
-//       name:"Tsimba/Golini",
-//       zones:["Golini","Mazumalume","Kundutsi","Mbuguni"]
-//       },
-//       {
-//       name:"Mkongani",
-//       zones:["Tiribe","Kizibe","Mkomba","Mlafyeni","Mtsamviani"]
-//       },
-//       {
-//       name:"Kubo South",
-//       zones:["Lukore","Mangawani","Mwaluvanga","Majimboni","Shimba Hills"]
-//       },
-//       ]
-// },
-// {
-// name:"Msambweni",
-// wards:[
-// {
-// name:"Tiwi",
-// zones:["Mkoyo","Simkumbe"]
-// },
-// {
-// name:"Waa/Ng'ombeni",
-// zones:["Pungu","Waa","Ng'ombeni","Matuga"]
-// },
-// {
-// name:"Tsimba/Golini",
-// zones:["Golini","Mazumalume","Kundutsi","Mbuguni"]
-// },
-// {
-// name:"Mkongani",
-// zones:["Tiribe","Kizibe","Mkomba","Mlafyeni","Mtsamviani"]
-// },
-// {
-// name:"Kubo South",
-// zones:["Lukore","Mangawani","Mwaluvanga","Majimboni","Shimba Hills"]
-// },
-// ]
-// },
-// {
-// name:"Kinango",
-// wards:[
-// {
-// name:"Tiwi",
-// zones:["Mkoyo","Simkumbe"]
-// },
-// {
-// name:"Waa/Ng'ombeni",
-// zones:["Pungu","Waa","Ng'ombeni","Matuga"]
-// },
-// {
-// name:"Tsimba/Golini",
-// zones:["Golini","Mazumalume","Kundutsi","Mbuguni"]
-// },
-// {
-// name:"Mkongani",
-// zones:["Tiribe","Kizibe","Mkomba","Mlafyeni","Mtsamviani"]
-// },
-// {
-// name:"Kubo South",
-// zones:["Lukore","Mangawani","Mwaluvanga","Majimboni","Shimba Hills"]
-// },
-// ]
-// },
-// {
-// name:"Lunga Lunga",
-// wards:[
-// {
-// name:"Tiwi",
-// zones:["Mkoyo","Simkumbe"]
-// },
-// {
-// name:"Waa/Ng'ombeni",
-// zones:["Pungu","Waa","Ng'ombeni","Matuga"]
-// },
-// {
-// name:"Tsimba/Golini",
-// zones:["Golini","Mazumalume","Kundutsi","Mbuguni"]
-// },
-// {
-// name:"Mkongani",
-// zones:["Tiribe","Kizibe","Mkomba","Mlafyeni","Mtsamviani"]
-// },
-// {
-// name:"Kubo South",
-// zones:["Lukore","Mangawani","Mwaluvanga","Majimboni","Shimba Hills"]
-// },
-// ]
-// }
-// ]
-
-// const changeSubCounty = (e)=>{
-//   setSubCounty(e.target.value);
-//   setWards(subCounties.find((subCounty)=>subCounty.name===e.target.value).wards)
-// };
-
-// const changeWard = (e)=>{
-//    setWard(e.target.value);
-//    setZones(wards.find((ward)=>ward.name===e.target.value).zones)
-//  };
-
-//  const changeZone = (e)=>{
-//    setZone(e.target.value);
-//  };
-
 function handleSubmit(e) {
   e.preventDefault();
-  axios.post('http://localhost:4000/register',{lname,fname,email,username,employeeId,mobile,userType,password})
+  axios.post('https://kwale-hris-app.onrender.com:4000/register',{lname,fname,email,username,employeeId,mobile,userType,password})
   .then(res=>{
       console.log(res);
       navigate('/login');

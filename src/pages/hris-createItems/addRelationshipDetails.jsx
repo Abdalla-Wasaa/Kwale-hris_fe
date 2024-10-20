@@ -17,7 +17,7 @@ const navigate = useNavigate();
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('http://localhost:4000/addRelationshipDetails',{payrollId,relationship,fullName,email,role,nationalId,phoneNumber})
+    axios.post('https://kwale-hris-app.onrender.com:4000/addRelationshipDetails',{payrollId,relationship,fullName,email,role,nationalId,phoneNumber})
     .then(res=>{
         console.log(res);
         navigate('/employees');

@@ -17,7 +17,7 @@ const [nhifNumber,setNhifNumber] = useState('');
 const navigate = useNavigate();
 
 useEffect(()=>{
-    axios.get('http://localhost:4000/getBankDetails/'+prollId,{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
+    axios.get('https://kwale-hris-app.onrender.com:4000/getBankDetails/'+prollId,{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
     .then(res => {
         console.log(res);
         setPayrollId(res?.data[0].payrollId)
@@ -33,7 +33,7 @@ useEffect(()=>{
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.put('http://localhost:4000/updateBankDetails/'+prollId,{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
+    axios.put('https://kwale-hris-app.onrender.com:4000/updateBankDetails/'+prollId,{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
     .then(res=>{
         console.log(res);
         navigate('/employees');

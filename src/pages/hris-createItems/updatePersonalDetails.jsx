@@ -27,7 +27,7 @@ const [userType,setUserType] = useState('');
 const navigate = useNavigate();
 
 useEffect(()=>{
-    axios.get('http://localhost:4000/getEmployee/'+id,{payrollId,fname,lname,email,ethnicity,bloodGroup,dob,phoneNumber,surname,gender,address,userType,salutation,kra,nationalId,religion})
+    axios.get('https://kwale-hris-app.onrender.com:4000/getEmployee/'+id,{payrollId,fname,lname,email,ethnicity,bloodGroup,dob,phoneNumber,surname,gender,address,userType,salutation,kra,nationalId,religion})
     .then(res => {
         console.log(res);
         setPayrollId(res?.data[0].payrollId)
@@ -53,7 +53,7 @@ useEffect(()=>{
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.put('http://localhost:4000/updateEmployee/'+id,{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType})
+    axios.put('https://kwale-hris-app.onrender.com:4000/updateEmployee/'+id,{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType})
     .then(res=>{
         console.log(res);
         navigate('/employees');

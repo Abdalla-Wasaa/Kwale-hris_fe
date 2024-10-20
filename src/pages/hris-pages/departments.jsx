@@ -14,7 +14,7 @@ const handleDropdown = (name) => {
   };
 
 useEffect(()=>{
-    axios.get('http://localhost:4000/getDepartments')
+    axios.get('https://kwale-hris-app.onrender.com:4000/getDepartments')
     .then(res => {
         console.log(res);
         setDepartments(res?.data)

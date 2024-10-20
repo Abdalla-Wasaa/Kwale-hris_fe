@@ -14,7 +14,7 @@ const handleDropdown = (name) => {
   };
 
 useEffect(()=>{
-    axios.get('http://localhost:4000/getApplications')
+    axios.get('https://kwale-hris-app.onrender.com:4000/getApplications')
     .then(res => {
         console.log(res);
         setApplications(res?.data)

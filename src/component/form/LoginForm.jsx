@@ -17,7 +17,7 @@ function LoginForm() {
     localStorage.setItem('token',null);
     localStorage.setItem('isLoggedIn',false);
   
-     axios.post('http://localhost:4000/login',{employeeId,password})
+     axios.post('https://kwale-hris-app.onrender.com:4000/login',{employeeId,password})
     .then(res=>{
       localStorage.setItem('token',res.data["accessToken"]);
       localStorage.setItem('id',res.data["id"]);
