@@ -11,19 +11,13 @@ const [institutionName,setInstitutionName] = useState('');
 const [graduationYear,setGraduationYear] = useState('');
 const [achievements,setAchievements] = useState('');
 const [courseName,setCourseName] = useState('');
-// const [secondaryInstitution,setSecondaryInstitution] = useState('');
-// const [secondaryYear,setSecondaryYear] = useState('');
-// const [secondaryAchievements,setSecondaryAchievements] = useState('');
-// const [professionalInstitution,setProfessionalInstitution] = useState('')
-// const [professionalYear,setProfessionalYear] = useState('');
-// const [professionalAchievements,setProfessionalAchievements] = useState('');
-
 
 const navigate = useNavigate();
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 function handleSubmit(e) {
     e.preventDefault();
-        axios.post('https://kwale-hris-app.onrender.com/addEducationDetails',{payrollId,institutionName,graduationYear,achievements,courseName})
+        axios.post(`${API_BASE_URL}/addEducationDetails`,{payrollId,institutionName,graduationYear,achievements,courseName})
     .then(res=>{
         console.log(res);
         navigate('/employees');

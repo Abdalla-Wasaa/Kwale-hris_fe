@@ -13,9 +13,11 @@ const [endDate,setEndDate] = useState('');
 const [reason,setReason] = useState('');
 const navigate = useNavigate();
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('https://kwale-hris-app.onrender.com/createApplication',{payrollId,leaveType,startDate,endDate,reason})
+    axios.post(`${API_BASE_URL}/createApplication`,{payrollId,leaveType,startDate,endDate,reason})
     .then(res=>{
         console.log(res);
         navigate('/applications');
@@ -25,7 +27,7 @@ function handleSubmit(e) {
 
 const [leaveTypes,setLeaveTypes]=useState([]);
 useEffect(()=>{
-    axios.get('https://kwale-hris-app.onrender.com/getLeaveTypes')
+    axios.get(`${API_BASE_URL}/getLeaveTypes`)
     .then(res => {
         console.log(res);
         setLeaveTypes(res?.data)

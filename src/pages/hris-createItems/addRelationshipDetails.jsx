@@ -15,9 +15,11 @@ const [phoneNumber,setPhoneNumber] = useState('');
 const [role, setRole] = useState('');
 const navigate = useNavigate();
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('https://kwale-hris-app.onrender.com/addRelationshipDetails',{payrollId,relationship,fullName,email,role,nationalId,phoneNumber})
+    axios.post(`${API_BASE_URL}/addRelationshipDetails`,{payrollId,relationship,fullName,email,role,nationalId,phoneNumber})
     .then(res=>{
         console.log(res);
         navigate('/employees');

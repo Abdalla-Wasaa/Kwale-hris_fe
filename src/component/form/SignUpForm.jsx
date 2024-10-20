@@ -13,9 +13,11 @@ function SignUpForm() {
   const [password,setPassword] = useState('');
   const navigate = useNavigate();
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 function handleSubmit(e) {
   e.preventDefault();
-  axios.post('https://kwale-hris-app.onrender.com/register',{lname,fname,email,username,employeeId,mobile,userType,password})
+  axios.post(`${API_BASE_URL}/register`,{lname,fname,email,username,employeeId,mobile,userType,password})
   .then(res=>{
       console.log(res);
       navigate('/login');

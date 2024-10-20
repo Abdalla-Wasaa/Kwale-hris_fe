@@ -23,8 +23,10 @@ function EditSelectionPage() {
     const [nationalId,setNationalId] = useState('');
     const [religion,setreligion] = useState('');
 
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
     useEffect(()=>{
-        axios.get('https://kwale-hris-app.onrender.com/getEmployee/'+id,{payrollId,fname,lname,email,surname,gender,address,salutation,kra,nationalId,religion})
+        axios.get(`${API_BASE_URL}/getEmployee/`+id,{payrollId,fname,lname,email,surname,gender,address,salutation,kra,nationalId,religion})
         .then(res => {
             console.log(res);
             setPayrollId(res?.data[0].payrollId)

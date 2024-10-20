@@ -43,11 +43,13 @@ function EmployeeDetails() {
     const [role,setRole] = useState('');
     const [relativeNationalId,setRelativeNationalId] = useState('');
 
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 
     // GET 
 
     useEffect(() => {
-        axios.get(`https://kwale-hris-app.onrender.com/employeeDetails/${id}`)
+        axios.get(`${API_BASE_URL}/employeeDetails/${id}`)
             .then(res => {
                 if (res.data && Array.isArray(res.data) && res.data.length > 0) {
                     const data = res.data[0];
@@ -89,7 +91,7 @@ function EmployeeDetails() {
 const [relationshipDetails,setRelationshipDetails] = useState([]);
 useEffect(() => {
     if (payrollId) {
-        axios.get('https://kwale-hris-app.onrender.com/getRelationshipDetails/' + payrollId)
+        axios.get(`${API_BASE_URL}/getRelationshipDetails/` + payrollId)
             .then(res => {
                 console.log(res);
                 setRelationshipDetails(res?.data);
@@ -101,7 +103,7 @@ useEffect(() => {
 const [educationDetails,setEducationDetails] = useState([]);
 useEffect(() => {
     if (payrollId) {
-        axios.get('https://kwale-hris-app.onrender.com/getEductnDetails/' + payrollId)
+        axios.get(`${API_BASE_URL}/getEductnDetails/` + payrollId)
             .then(res => {
                 console.log(res);
                 setEducationDetails(res?.data);

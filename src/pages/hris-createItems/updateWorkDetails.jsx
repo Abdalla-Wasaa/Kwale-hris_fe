@@ -23,10 +23,12 @@ const [pensionScheme,setPensionScheme] = useState('');
 const [salaryScalePoint, setSalaryScalePoint] = useState('');
 const [incrementalMonth,setIncrementalMonth] = useState('');
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
 const navigate = useNavigate();
 
 useEffect(()=>{
-    axios.get('https://kwale-hris-app.onrender.com:4000/getWorkDetails/'+prollId,{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
+    axios.get(`${API_BASE_URL}/getWorkDetails/`+prollId,{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
     .then(res => {
         console.log(res);
         setPayrollId(res?.data[0].payrollId)
@@ -83,7 +85,7 @@ const changeSubcounty = (e)=>{
 
 const [departments,setDepartments] = useState([]);
 useEffect(()=>{
-    axios.get('https://kwale-hris-app.onrender.com/getDepartments')
+    axios.get(`${API_BASE_URL}/getDepartments`)
     .then(res => {
         console.log(res);
         setDepartments(res?.data)
@@ -93,7 +95,7 @@ useEffect(()=>{
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.put('https://kwale-hris-app.onrender.com/updateWorkDetails/'+prollId,{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
+    axios.put(`${API_BASE_URL}/updateWorkDetails/`+prollId,{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
     .then(res=>{
         console.log(res);
         navigate('/employees');

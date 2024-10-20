@@ -15,9 +15,11 @@ function UpdateRelationshipDetails() {
     const [role, setRole] = useState('');
     const navigate = useNavigate();
 
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+
     useEffect(() => {
         if (Id) {
-            axios.get(`https://kwale-hris-app.onrender.com/getRltnshpDetails/${Id}`)
+            axios.get(`${API_BASE_URL}/getRltnshpDetails/${Id}`)
                 .then(res => {
                     if (res.data && res.data.length > 0) {
                         const data = res.data[0]; // Assuming response is an array
@@ -38,7 +40,7 @@ function UpdateRelationshipDetails() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        axios.put(`https://kwale-hris-app.onrender.com/updateRelationshipDetails/${Id}`, {
+        axios.put(`${API_BASE_URL}/updateRelationshipDetails/${Id}`, {
             payrollId,
             relationship,
             fullName,

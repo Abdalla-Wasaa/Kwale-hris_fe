@@ -12,9 +12,10 @@ const [dropdown, setDropdown] = useState(false);
 const handleDropdown = (name) => {
     setDropdown(name === dropdown ? "" : name);
   };
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 useEffect(()=>{
-    axios.get('https://kwale-hris-app.onrender.com/getLeaveTypes')
+    axios.get(`${API_BASE_URL}/getLeaveTypes`)
     .then(res => {
         console.log(res);
         setLeaveTypes(res?.data)

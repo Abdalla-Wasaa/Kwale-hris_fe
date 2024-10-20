@@ -11,13 +11,14 @@ function LoginForm() {
   const navigate = useNavigate()
 
   axios.defaults.withCredentials = true;
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
   function handleSubmit(e) {
     e.preventDefault();
     localStorage.setItem('token',null);
     localStorage.setItem('isLoggedIn',false);
   
-     axios.post('https://kwale-hris-app.onrender.com/login',{employeeId,password})
+     axios.post(`${API_BASE_URL}/login`,{employeeId,password})
     .then(res=>{
       localStorage.setItem('token',res.data["accessToken"]);
       localStorage.setItem('id',res.data["id"]);
