@@ -17,7 +17,7 @@ function UpdateRelationshipDetails() {
 
     useEffect(() => {
         if (Id) {
-            axios.get(`https://kwale-hris-app.onrender.com:4000/getRltnshpDetails/${Id}`)
+            axios.get(`https://kwale-hris-app.onrender.com/getRltnshpDetails/${Id}`)
                 .then(res => {
                     if (res.data && res.data.length > 0) {
                         const data = res.data[0]; // Assuming response is an array
@@ -38,7 +38,7 @@ function UpdateRelationshipDetails() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        axios.put(`https://kwale-hris-app.onrender.com:4000/updateRelationshipDetails/${Id}`, {
+        axios.put(`https://kwale-hris-app.onrender.com/updateRelationshipDetails/${Id}`, {
             payrollId,
             relationship,
             fullName,

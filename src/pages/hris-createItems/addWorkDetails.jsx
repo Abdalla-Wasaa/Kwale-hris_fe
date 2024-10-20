@@ -122,7 +122,7 @@ setDivision(e.target.value);
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('https://kwale-hris-app.onrender.com:4000/addWorkDetails',{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
+    axios.post('https://kwale-hris-app.onrender.com/addWorkDetails',{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
     .then(res=>{
         console.log(res);
         navigate('/employees');

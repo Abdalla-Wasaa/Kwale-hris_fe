@@ -27,7 +27,7 @@ const navigate = useNavigate();
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('https://kwale-hris-app.onrender.com:4000/createEmployee',{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType,password})
+    axios.post('https://kwale-hris-app.onrender.com/createEmployee',{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType,password})
     .then(res=>{
         console.log(res);
         navigate('/employees');

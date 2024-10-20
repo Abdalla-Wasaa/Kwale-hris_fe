@@ -8,7 +8,7 @@ function Employees() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('https://kwale-hris-app.onrender.com:4000/getEmployees')
+    axios.get('https://kwale-hris-app.onrender.com/getEmployees')
       .then(res => {
         console.log(res);
         setEmployees(res?.data);

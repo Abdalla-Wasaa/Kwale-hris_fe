@@ -14,7 +14,7 @@ function RetirementList() {
 
     useEffect(() => {
         // Fetch the retirement list from the API
-        axios.get('https://kwale-hris-app.onrender.com:4000/retirementList')
+        axios.get('https://kwale-hris-app.onrender.com/retirementList')
             .then(response => {
                 // Filter the response data to only show items with status "Pending"
                 const pendingRetirements = response.data.filter(employee => employee.status === "Pending");
@@ -26,7 +26,7 @@ function RetirementList() {
     }, []);
 
     const handleApprove = (id) => {
-        axios.put('https://kwale-hris-app.onrender.com:4000/approveTermination/' + id)
+        axios.put('https://kwale-hris-app.onrender.com/approveTermination/' + id)
             .then(res => {
                 console.log(res.data);
                 alert('You are About To Approve This Termination');

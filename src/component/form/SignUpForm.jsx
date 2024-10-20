@@ -15,7 +15,7 @@ function SignUpForm() {
 
 function handleSubmit(e) {
   e.preventDefault();
-  axios.post('https://kwale-hris-app.onrender.com:4000/register',{lname,fname,email,username,employeeId,mobile,userType,password})
+  axios.post('https://kwale-hris-app.onrender.com/register',{lname,fname,email,username,employeeId,mobile,userType,password})
   .then(res=>{
       console.log(res);
       navigate('/login');

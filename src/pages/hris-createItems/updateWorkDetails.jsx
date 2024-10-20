@@ -83,7 +83,7 @@ const changeSubcounty = (e)=>{
 
 const [departments,setDepartments] = useState([]);
 useEffect(()=>{
-    axios.get('https://kwale-hris-app.onrender.com:4000/getDepartments')
+    axios.get('https://kwale-hris-app.onrender.com/getDepartments')
     .then(res => {
         console.log(res);
         setDepartments(res?.data)
@@ -93,7 +93,7 @@ useEffect(()=>{
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.put('https://kwale-hris-app.onrender.com:4000/updateWorkDetails/'+prollId,{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
+    axios.put('https://kwale-hris-app.onrender.com/updateWorkDetails/'+prollId,{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
     .then(res=>{
         console.log(res);
         navigate('/employees');

@@ -14,7 +14,7 @@ function UploadPersonalDetails() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('https://kwale-hris-app.onrender.com:4000/uploadEmployeesData', formData, {
+      const response = await axios.post('https://kwale-hris-app.onrender.com/uploadEmployeesData', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

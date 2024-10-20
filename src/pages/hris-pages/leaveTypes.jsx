@@ -14,7 +14,7 @@ const handleDropdown = (name) => {
   };
 
 useEffect(()=>{
-    axios.get('https://kwale-hris-app.onrender.com:4000/getLeaveTypes')
+    axios.get('https://kwale-hris-app.onrender.com/getLeaveTypes')
     .then(res => {
         console.log(res);
         setLeaveTypes(res?.data)

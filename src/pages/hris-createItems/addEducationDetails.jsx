@@ -23,7 +23,7 @@ const navigate = useNavigate();
 
 function handleSubmit(e) {
     e.preventDefault();
-        axios.post('https://kwale-hris-app.onrender.com:4000/addEducationDetails',{payrollId,institutionName,graduationYear,achievements,courseName})
+        axios.post('https://kwale-hris-app.onrender.com/addEducationDetails',{payrollId,institutionName,graduationYear,achievements,courseName})
     .then(res=>{
         console.log(res);
         navigate('/employees');

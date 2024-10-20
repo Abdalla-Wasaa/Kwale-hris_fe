@@ -12,7 +12,7 @@ const navigate = useNavigate();
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post('https://kwale-hris-app.onrender.com:4000/createLeaveType',{leaveTypeName,description})
+    axios.post('https://kwale-hris-app.onrender.com/createLeaveType',{leaveTypeName,description})
     .then(res=>{
         console.log(res);
         navigate('/leaveTypes');
