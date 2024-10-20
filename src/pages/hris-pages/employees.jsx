@@ -14,7 +14,9 @@ function Employees() {
         console.log(res);
         setEmployees(res?.data);
       })
-      .catch(err => console.log(err));
+      .catch(
+        err => console.log(err),
+        console.log(process.env.REACT_APP_API_BASE_URL));
   }, []);
 
   // Function to handle search input changes
@@ -29,6 +31,7 @@ function Employees() {
   });
 
   return (
+    
     <div>
       <div className='d-flex vh-50 bg-white justify-content-center align-items-center'>
         <div className='w-100 mt-0 bg-white rounded p-4'>
@@ -58,6 +61,7 @@ function Employees() {
               </tr>
             </thead>
             <tbody className="crancy-table__body">
+              
               {filteredEmployees.map((employee) => {
                 return (
                   <tr key={employee._id}>
