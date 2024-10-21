@@ -74,6 +74,10 @@ import RetirementPage from "./pages/retirementPage";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Navigate to="/login" replace />, 
+  },
+  {
+    path: "/",
     Component: LoginLayout,
     children: [
       {
