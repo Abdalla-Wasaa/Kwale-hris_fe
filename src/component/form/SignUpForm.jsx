@@ -17,7 +17,7 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 function handleSubmit(e) {
   e.preventDefault();
-  axios.post(`${API_BASE_URL}/register`,{lname,fname,email,username,employeeId,mobile,userType,password})
+  axios.post('https://kwale-hris-api.onrender.com/register',{lname,fname,email,username,employeeId,mobile,userType,password})
   .then(res=>{
       console.log(res);
       navigate('/login');

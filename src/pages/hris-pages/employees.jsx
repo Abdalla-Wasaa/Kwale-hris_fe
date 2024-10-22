@@ -9,7 +9,7 @@ function Employees() {
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
   useEffect(() => {
-    axios.get(`${API_BASE_URL}/getEmployees`)
+    axios.get('https://kwale-hris-api.onrender.com/getEmployees')
       .then(res => {
         console.log(res);
         setEmployees(res?.data);
