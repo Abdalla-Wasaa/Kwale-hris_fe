@@ -16,6 +16,7 @@ function RetirementList() {
 
     useEffect(() => {
         // Fetch the retirement list from the API
+        console.log("API_BASE_URL:", API_BASE_URL);
         axios.get(`${API_BASE_URL}/retirementList`)
             .then(response => {
                 // Filter the response data to only show items with status "Pending"
