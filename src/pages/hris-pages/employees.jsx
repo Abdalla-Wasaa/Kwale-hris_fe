@@ -6,7 +6,7 @@ import EmployeeList from '../../component/myComponents/employeeList';
 function Employees() {
   const [employees, setEmployees] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+  // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
   useEffect(() => {
     axios.get('https://kwale-hris-api.onrender.com/getEmployees')
@@ -16,7 +16,8 @@ function Employees() {
       })
       .catch(
         err => console.log(err),
-        console.log(process.env.REACT_APP_API_BASE_URL));
+        // console.log(process.env.REACT_APP_API_BASE_URL)
+      );
   }, []);
 
   // Function to handle search input changes
