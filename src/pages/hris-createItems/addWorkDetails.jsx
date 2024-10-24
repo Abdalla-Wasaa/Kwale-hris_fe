@@ -23,7 +23,7 @@ const [incrementalMonth,setIncrementalMonth] = useState('');
 
 const navigate = useNavigate();
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 
 const [wards,setWards] = useState([]);
@@ -124,7 +124,7 @@ setDivision(e.target.value);
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post(`${API_BASE_URL}/addWorkDetails`,{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
+    axios.post('https://kwale-hris-api.onrender.com/addWorkDetails',{payrollId,department,division,payGroup,jobGroup,pensionScheme,firstAppointment,currentAppointment,deployment,subcounty,ward,dutyStation,salaryScalePoint,incrementalMonth})
     .then(res=>{
         console.log(res);
         navigate('/employees');

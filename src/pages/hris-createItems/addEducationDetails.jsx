@@ -13,11 +13,11 @@ const [achievements,setAchievements] = useState('');
 const [courseName,setCourseName] = useState('');
 
 const navigate = useNavigate();
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 function handleSubmit(e) {
     e.preventDefault();
-        axios.post(`${API_BASE_URL}/addEducationDetails`,{payrollId,institutionName,graduationYear,achievements,courseName})
+        axios.post('https://kwale-hris-api.onrender.com/addEducationDetails',{payrollId,institutionName,graduationYear,achievements,courseName})
     .then(res=>{
         console.log(res);
         navigate('/employees');

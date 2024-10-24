@@ -11,11 +11,11 @@ const [retirementDate,setRetirementDate] = useState('');
 const [reason,setReason] = useState('');
 const navigate = useNavigate();
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post(`${API_BASE_URL}/addRetirement`,{payrollId,retirementDate,reason})
+    axios.post('https://kwale-hris-api.onrender.com/addRetirement',{payrollId,retirementDate,reason})
     .then(res=>{
         console.log(res);
         navigate('/retirementList');

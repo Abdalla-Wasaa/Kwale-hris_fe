@@ -25,11 +25,11 @@ const [userType,setUserType] = useState('');
 const [password,setPassword] = useState('');
 const navigate = useNavigate();
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post(`${API_BASE_URL}/createEmployee`,{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType,password})
+    axios.post('https://kwale-hris-api.onrender.com/createEmployee',{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType,password})
     .then(res=>{
         console.log(res);
         navigate('/employees');

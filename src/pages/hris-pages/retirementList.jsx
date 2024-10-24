@@ -12,12 +12,12 @@ function RetirementList() {
         setDropdown(name === dropdown ? "" : name);
     };
 
-    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+    // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
     useEffect(() => {
         // Fetch the retirement list from the API
-        console.log("API_BASE_URL:", API_BASE_URL);
-        axios.get(`${API_BASE_URL}/retirementList`)
+        // console.log("API_BASE_URL:", API_BASE_URL);
+        axios.get('https://kwale-hris-api.onrender.com/retirementList')
             .then(response => {
                 // Filter the response data to only show items with status "Pending"
                 const pendingRetirements = response.data.filter(employee => employee.status === "Pending");
@@ -29,7 +29,7 @@ function RetirementList() {
     }, []);
 
     const handleApprove = (id) => {
-        axios.put(`${API_BASE_URL}/approveTermination/` + id)
+        axios.put('https://kwale-hris-api.onrender.com/approveTermination/' + id)
             .then(res => {
                 console.log(res.data);
                 alert('You are About To Approve This Termination');

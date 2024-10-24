@@ -13,10 +13,10 @@ const handleDropdown = (name) => {
     setDropdown(name === dropdown ? "" : name);
   };
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 useEffect(()=>{
-    axios.get(`${API_BASE_URL}/getApplications`)
+    axios.get('https://kwale-hris-api.onrender.com/getApplications')
     .then(res => {
         console.log(res);
         setApplications(res?.data)

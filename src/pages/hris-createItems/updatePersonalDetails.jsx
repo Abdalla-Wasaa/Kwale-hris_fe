@@ -26,10 +26,10 @@ const [bloodGroup,setBloodGroup] = useState('');
 const [userType,setUserType] = useState('');
 const navigate = useNavigate();
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 useEffect(()=>{
-    axios.get(`${API_BASE_URL}/getEmployee/`+id,{payrollId,fname,lname,email,ethnicity,bloodGroup,dob,phoneNumber,surname,gender,address,userType,salutation,kra,nationalId,religion})
+    axios.get('https://kwale-hris-api.onrender.com/getEmployee/'+id,{payrollId,fname,lname,email,ethnicity,bloodGroup,dob,phoneNumber,surname,gender,address,userType,salutation,kra,nationalId,religion})
     .then(res => {
         console.log(res);
         setPayrollId(res?.data[0].payrollId)
@@ -55,7 +55,7 @@ useEffect(()=>{
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.put(`${API_BASE_URL}/updateEmployee/`+id,{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType})
+    axios.put('https://kwale-hris-api.onrender.com/updateEmployee/'+id,{payrollId,salutation,lname,fname,surname,email,kra,phoneNumber,ethnicity,dob,id,gender,bloodGroup,religion,address,userType})
     .then(res=>{
         console.log(res);
         navigate('/employees');

@@ -10,11 +10,11 @@ const [leaveTypeName,setLeaveTypeName] = useState('');
 const [description,setDescription] = useState('');
 const navigate = useNavigate();
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post(`${API_BASE_URL}/createLeaveType`,{leaveTypeName,description})
+    axios.post('https://kwale-hris-api.onrender.com/createLeaveType',{leaveTypeName,description})
     .then(res=>{
         console.log(res);
         navigate('/leaveTypes');

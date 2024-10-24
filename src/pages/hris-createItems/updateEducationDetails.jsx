@@ -13,11 +13,11 @@ function UpdateEducationDetails() {
     const [courseName,setCourseName] = useState('');
     const navigate = useNavigate();
 
-    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+    // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
     useEffect(() => {
         if (Id) {
-            axios.get(`${API_BASE_URL}/getEducationDetails/${Id}`)
+            axios.get('https://kwale-hris-api.onrender.com/getEducationDetails/'+Id)
                 .then(res => {
                     if (res.data && res.data.length > 0) {
                         const data = res.data[0]; // Assuming response is an array
@@ -36,7 +36,7 @@ function UpdateEducationDetails() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        axios.put(`${API_BASE_URL}/updateEducationDetails/${Id}`, {
+        axios.put('https://kwale-hris-api.onrender.com/updateEducationDetails/'+Id, {
             payrollId,
            institutionName,
            graduationYear,

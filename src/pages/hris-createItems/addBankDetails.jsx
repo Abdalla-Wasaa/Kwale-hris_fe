@@ -14,11 +14,11 @@ const [nssfNumber,setNssfNumber] = useState('');
 const [nhifNumber,setNhifNumber] = useState('');
 const navigate = useNavigate();
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 function handleSubmit(e) {
     e.preventDefault();
-    axios.post(`${API_BASE_URL}/addBankdetails`,{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
+    axios.post('https://kwale-hris-api.onrender.com/addBankdetails',{bankAccountName,bankAccountNumber,bankBranch,payrollId,nssfNumber,nhifNumber})
     .then(res=>{
         console.log(res);
         navigate('/employees');

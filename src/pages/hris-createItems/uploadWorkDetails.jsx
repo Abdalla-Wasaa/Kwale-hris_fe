@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function UploadWorkDetails() {
   const [file, setFile] = useState(null);
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+  // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -15,7 +15,7 @@ function UploadWorkDetails() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/uploadEmployeesWorkData`, formData, {
+      const response = await axios.post('https://kwale-hris-api.onrender.com/uploadEmployeesWorkData', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
