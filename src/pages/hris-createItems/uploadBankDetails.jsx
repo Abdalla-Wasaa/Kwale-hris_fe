@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function UploadBankDetails() {
   const [file, setFile] = useState(null);
-  // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+  //const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
