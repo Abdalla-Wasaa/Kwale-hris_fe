@@ -15,7 +15,7 @@ function UploadBankDetails() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('https://kwale-hris-api.onrender.com/uploadBusinessData', formData, {
+      const response = await axios.post('https://kwale-hris-api.onrender.com/uploadBusinessPermitData', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
